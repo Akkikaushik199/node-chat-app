@@ -28,11 +28,10 @@ io.on('connection',(socket)=>{       //Listen for some specific event and do the
     console.log('createMessage',newMessage);
     io.emit('newMessage',generateMessage(newMessage.from,newMessage.text));
     callback('This is from the server');
-    // socket.broadcast.emit('newMessage',{
-    //   from: newMessage.from,
-    //   text: newMessage.text,
-    //   createdAt: new Date().getTime()
-    // });
+  });
+
+  socket.on('createLocationMessage', (coords)=>{
+    io.emit('newMessage' ,generateMessage('Admin', `${coords.latitude}, ${coords.longitude}`));
   });
 
   socket.on('disconnect',()=>{
