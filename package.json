@@ -14,7 +14,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "expect": "^24.8.0",
     "express": "^4.17.1",
+    "mocha": "^6.2.0",
     "nodemon": "^1.19.1",
     "socket.io": "^2.2.0"
   }
